@@ -1,3 +1,4 @@
+'use strict';
 var grunt = require('grunt');
 
 /*
@@ -19,16 +20,13 @@ var grunt = require('grunt');
     test.doesNotThrow(block, [error], [message])
     test.ifError(value)
 */
-
-exports['json'] = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  doTest: function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(grunt.helper('json'), 'json!!!', 'should return the correct value.');
-    test.done();
-  }
+exports.json = {
+    setUp: function(done) {
+        done();
+    },
+    doTest: function(test) {
+        test.expect(1);
+        test.equal(grunt.helper('json'), 'json', 'Should return correct value');
+        test.done();
+    }
 };
