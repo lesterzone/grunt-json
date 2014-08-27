@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             /**
              * Namespace definition
              */
-            defineVar = namespace + ' = ' + namespace + ' || {};',
+            defineVar = namespace + ' = ' + namespace + ' || {};\n',
 
             basename, filename, fileContent;
 
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             basename = path.basename(filepath, '.json');
             filename = processName(includePath ? filepath : basename);
             fileContent = grunt.file.read(filepath);
-            return namespace + '.' + filename + ' = ' + fileContent + ';';
+            return namespace + '.' + filename + ' = ' + fileContent + ';\n';
         }).join('');
     };
 
